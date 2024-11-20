@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Row } from './models/row.model';
+import { GoogleSheetsModule } from './google-sheets/google-sheets.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { Row } from './models/row.model';
       autoLoadModels: true,
       synchronize: true, 
     }),
+    GoogleSheetsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
